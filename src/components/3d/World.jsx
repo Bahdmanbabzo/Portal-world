@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { EffectComposer, Noise } from '@react-three/postprocessing';
 import Model from '../Model'; 
 
 function World (){
@@ -11,6 +12,9 @@ function World (){
                 <directionalLight position={[5, 5, 5]} intensity={3} />
                 <OrbitControls />
                 <Model />
+                <EffectComposer>
+                    <Noise premultiply/>
+                </EffectComposer>
             </Canvas>
         </div>
 )};
