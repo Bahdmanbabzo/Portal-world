@@ -1,4 +1,7 @@
-import { Stage } from '@react-three/drei'
+import { Stage, Cloud } from '@react-three/drei'
+import CreateSmokes from './Smoke'
+import { useFrame } from '@react-three/fiber';
+
 function Model() {
   return (
     <Stage 
@@ -17,6 +20,13 @@ function Model() {
         <planeGeometry args={[100, 100]} />
         <meshStandardMaterial color="gray" />
       </mesh>
+      <Cloud 
+        bounds={[40, 1, 2]} 
+        volume={50} 
+        color="#808080" 
+        opacity={0.2}
+        speed={2}
+      />
     </Stage>
   )
 }
