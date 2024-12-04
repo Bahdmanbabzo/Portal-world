@@ -1,12 +1,9 @@
 import { Stage, Cloud } from '@react-three/drei'
-import CreateSmokes from './Smoke'
 import { useFrame } from '@react-three/fiber';
 
 function Model() {
   return (
-    <Stage 
-      adjustCamera={false}
-      intensity={0}
+    <group
     >
       <mesh castShadow>
         <boxGeometry args={[1, 1, 1]} />
@@ -22,12 +19,13 @@ function Model() {
       </mesh>
       <Cloud 
         bounds={[40, 1, 2]} 
-        volume={50} 
+        volume={60} 
+        segments={40}
         color="#808080" 
         opacity={0.2}
         speed={2}
       />
-    </Stage>
+    </group>
   )
 }
 
