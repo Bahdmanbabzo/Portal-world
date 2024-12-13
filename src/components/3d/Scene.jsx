@@ -1,6 +1,7 @@
 import { Stage, Cloud, Float } from '@react-three/drei'
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+
 
 function Model() {
   const gltf = useLoader(GLTFLoader, '/the_impossible_rubiks_cube.glb'); 
@@ -9,6 +10,10 @@ function Model() {
 }
 
 function Scene() {
+  const { camera } = useThree();
+  useFrame(() => {
+    console.log(camera.position);
+  }); 
   return (
     <group>
       <Float
