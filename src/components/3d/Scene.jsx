@@ -10,10 +10,6 @@ function Model() {
 }
 
 function Scene() {
-  const { camera } = useThree();
-  useFrame(() => {
-    console.log(camera.position);
-  }); 
   return (
     <group>
       <Float
