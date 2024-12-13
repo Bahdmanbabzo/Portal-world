@@ -12,6 +12,7 @@ function Model() {
 function Scene() {
   return (
     <group>
+       <directionalLight position={[5, 5, 5]} intensity={3} />
       <Float
       speed={3}
       floatIntensity={3}>
@@ -23,7 +24,7 @@ function Scene() {
         segments={40}
         color="#808080" 
         opacity={0.2}
-        speed={2}
+        speed={0.5}
       />
     </group>
   )
