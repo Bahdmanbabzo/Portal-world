@@ -2,15 +2,16 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { EffectComposer, Noise } from '@react-three/postprocessing';
 import Scene from './Scene'; 
+import PortalMaker from './PortalMaker';
 
 function World (){
     return (
         <div className="h-screen w-screen">
-            <Canvas shadows camera={{ position: [-3.6, -1.5, -1.5]}} >
-                <color attach="background" args={['#343434']} />
-                <directionalLight position={[5, 5, 5]} intensity={3} />
+            <Canvas shadows>
+                {/* <color attach="background" args={['#343434']} /> */}
+                <ambientLight intensity={10} />
                 <OrbitControls />
-                <Scene />
+                <PortalMaker scene={<Scene />} cameraPosition={[-3.6,-1.5,-1.5]}/>
                 {/* <EffectComposer>
                     <Noise premultiply/>
                 </EffectComposer> */}
