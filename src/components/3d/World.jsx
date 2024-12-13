@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { EffectComposer, Noise } from '@react-three/postprocessing';
-import Model from './Model'; 
+import Scene from './Scene'; 
 
 function World (){
     return (
@@ -10,7 +10,7 @@ function World (){
                 <color attach="background" args={['#343434']} />
                 <directionalLight position={[5, 5, 5]} intensity={3} />
                 <OrbitControls />
-                <Model />
+                <Scene />
                 {/* <EffectComposer>
                     <Noise premultiply/>
                 </EffectComposer> */}
