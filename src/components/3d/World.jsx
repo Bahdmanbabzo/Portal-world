@@ -6,7 +6,7 @@ import Scene from './Scene';
 function World (){
     return (
         <div className="h-screen w-screen">
-            <Canvas shadows>
+            <Canvas shadows camera={{ position: [-3.6, -1.5, -1.5]}} >
                 <color attach="background" args={['#343434']} />
                 <directionalLight position={[5, 5, 5]} intensity={3} />
                 <OrbitControls />
